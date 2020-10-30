@@ -2,6 +2,9 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
+
+void swap(int *pos1, int *pos2); //method declaration for swap method
+
 int main(int argc, char **argv)
 {
     int arr[] = {3, 7, 5};
@@ -55,6 +58,18 @@ int main(int argc, char **argv)
     printf("\n");
     printf("%d", arr[0]); //5
 */
-    char greeting[] = "hi";
-    printf("%s", greeting);
+
+    //Case 4 Swap Method
+
+    int arr1[] = {2, 3};
+    printf("%d %d \n", arr1[0], arr1[1]); //prints 2, 3
+    swap(arr1, (arr1 + 1));
+    printf("%d %d \n", arr1[0], arr1[1]); //prints 3, 2
+}
+
+void swap(int *pos1, int *pos2)
+{
+    int temp = *pos1;
+    *pos1 = *pos2;
+    *pos2 = temp;
 }
